@@ -1,0 +1,31 @@
+﻿<Window x:Class="Player.Screen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Player"
+        mc:Ignorable="d"
+        Title="Screen" Height="480" Width="640" Background="Black" Foreground="Black" ShowInTaskbar="False" MouseLeftButtonDown="Move" KeyDown="KeyboradAction" MouseDoubleClick="DoubleClick" WindowStyle="None" ResizeMode="CanResizeWithGrip">
+    <Grid>
+        <StackPanel x:Name="help" VerticalAlignment="Bottom" Grid.ZIndex="3" HorizontalAlignment="Center" Orientation="Horizontal" Background="#7FA8A8A8" Margin="0,0,0,20" >
+            <Border BorderBrush="#FF2E2E2E" BorderThickness="1" CornerRadius="2" VerticalAlignment="Center" Margin="10,10,1,10">
+                <TextBlock Text="F" FontWeight="Bold" FontSize="22" Padding="4,0" />
+            </Border>
+            <TextBlock VerticalAlignment="Center" Margin="2,10,10,10" FontSize="22">
+                or double-click to go full screen mode
+            </TextBlock>
+        </StackPanel>
+
+        <Grid x:Name="unknown" Grid.ZIndex="0">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock x:Name="unknownTitle" FontWeight="Bold" FontSize="36" Padding="20,10" HorizontalAlignment="Center" Foreground="White" />
+                <TextBlock x:Name="unknownText" FontSize="18" HorizontalAlignment="Center" Foreground="White"/>
+            </StackPanel>
+        </Grid>
+
+        <Image x:Name="image" Grid.ZIndex="0" Visibility="Hidden"/>
+        <MediaElement x:Name="video" Grid.ZIndex="0"  Visibility="Hidden" LoadedBehavior="Manual" MediaOpened="videoReady" MediaEnded="videoEnd" />
+        <WebBrowser x:Name="website" Grid.ZIndex="0" Margin="0,0,0,10" Visibility="Hidden" Navigated="startLoading" LoadCompleted="endLoading" OpacityMask="White" />
+        <Rectangle x:Name="progress" Grid.ZIndex="2" Fill="#FF68FF00" Height="10" Margin="0" VerticalAlignment="Bottom" StrokeThickness="0" HorizontalAlignment="Left"/>
+    </Grid>
+</Window>
