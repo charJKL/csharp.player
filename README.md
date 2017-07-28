@@ -10,7 +10,8 @@ Executable file can be found here [https://github.com/charJKL/player/releases/ta
 In first use program will create "playlist" folder and "settings.txt" in current directory.
 
 ## Issues
-To browser internet application involves WPF WebBrowser control, which isn't perfect. Most fancy websites may looks ugly, or not work at all.
+Player to browser internet involves WPF <WebBrowser/> control, which isn't perfect. Most fancy websites may looks ugly, or not work at all.
+Application require .NET Framework 4.6 at least.
 
 ## Printscreen
 <div align="center">
